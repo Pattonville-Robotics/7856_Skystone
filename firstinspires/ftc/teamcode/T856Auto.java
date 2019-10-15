@@ -26,7 +26,7 @@ public class T856Auto extends LinearOpMode {
         waitForStart();
         
         drive.moveInches(Direction.FORWARD,14,0.8);
-        Telemetry.Item vuforiaX = telemetry.addData("Robot Y", "0").setRetained(true);
+        Telemetry.Item vuforiaX = telemetry.addData("Robot Y", "6").setRetained(true);
         while (opModeIsActive() && vuforia.getRobotY() == 0.0) {
             vuforia.getVisibleTrackableLocation();
             
@@ -36,8 +36,11 @@ public class T856Auto extends LinearOpMode {
             telemetry.update();
              
         }
-        drive.moveInches(Direction.RIGHT, y, 0.8);
-        drive.moveInches(Direction.FORWARD,14,0.8);
+        drive.moveInches(Direction.RIGHT, y + 7, 0.8);
+        drive.moveInches(Direction.FORWARD, 14,0.8);
+        drive.moveInches(Direction.FORWARD, 24, 0.8);
+        drive.rotateDegrees(Direction.COUNTERCLOCKWISE, 90, 0.8);
+        drive.moveInches(Direction.FORWARD, 56, 0.8);
         //drive.moveInches(Direction.BACKWARD,12,0.4);
         // drive.rotateDegrees(Direction.CLOCKWISE,90,0.8);
         
